@@ -6,10 +6,11 @@
   "module": "esm/index.js",
   "unpkg": "min.js",
   "scripts": {
-    "build": "npm run cjs && npm run esm && npm run min",
+    "build": "npm run cjs && npm run esm && npm run min && npm test",
     "cjs": "cp index.js cjs/ && echo \"module.exports = customElements.get('bulma-tile');\" >> cjs/index.js",
     "esm": "cp index.js esm/ && echo \"export default customElements.get('bulma-tile');\" >> esm/index.js",
-    "min": "uglifyjs index.js --comments=/^!/ -c -m -o min.js"
+    "min": "uglifyjs index.js --comments=/^!/ -c -m -o min.js",
+    "test": "node test/index.js"
   },
   "keywords": [
     "bulma",

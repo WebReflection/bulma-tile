@@ -23,12 +23,11 @@
       static get observedAttributes() {
         return ['size', 'vertical'];
       }
-      connectedCallback() {
-        this.addEventListener('update', this);
+      attributeChangedCallback() {
         this.update();
       }
-      handleEvent(event) {
-        this[event.type]();
+      connectedCallback() {
+        this.update();
       }
       update() {
         const classes = ['tile'];
@@ -66,10 +65,9 @@
               }
             );
             if (update) {
-              const evt = new CustomEvent('update');
               forEach(
                 this.querySelectorAll(nodeName),
-                tile => tile.dispatchEvent(evt)
+                tile => tile.update()
               );
             }
           });
