@@ -1,0 +1,30 @@
+{
+  "name": "bulma-tile",
+  "version": "0.0.1",
+  "description": "A self organized bulma-tile custom element.",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "unpkg": "min.js",
+  "scripts": {
+    "build": "npm run cjs && npm run esm && npm run min",
+    "cjs": "cp index.js cjs/ && echo \"module.exports = customElements.get('bulma-tile');\" >> cjs/index.js",
+    "esm": "cp index.js esm/ && echo \"export default customElements.get('bulma-tile');\" >> esm/index.js",
+    "min": "uglifyjs index.js --comments=/^!/ -c -m -o min.js"
+  },
+  "keywords": [
+    "bulma",
+    "component",
+    "custom",
+    "element",
+    "tile",
+    "web"
+  ],
+  "author": "Andrea Giammarchi",
+  "license": "ISC",
+  "dependencies": {
+    "uglify-es": "^3.3.9"
+  },
+  "devDependencies": {
+    "basichtml": "^0.17.0"
+  }
+}
