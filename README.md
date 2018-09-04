@@ -19,3 +19,9 @@ Optionally define `vertical`, which will automatically set `is-vertical` modifie
 All contextual modifiers such `is-anchestor`, `is-parent`, or `is-child` are added or removed automatically.
 
 You could even drag around tiles through the inspector and see all nodes update accordingly.
+
+### Loading
+
+  * Custom Element definition only via `https://unpkg.com/bulma-tile` or [min.js](https://github.com/WebReflection/bulma-tile/blob/master/min.js)
+  * definition + class as CJS module via `const BulmaTile = require('bulma-tile')`
+  * definition + class as ESM module via `import BulmaTile from 'bulma-tile'`
